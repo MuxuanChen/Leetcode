@@ -1,4 +1,4 @@
-package array;
+package dp;
 
 /**
  * 买卖股票2
