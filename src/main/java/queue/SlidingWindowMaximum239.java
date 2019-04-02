@@ -32,7 +32,7 @@ public class SlidingWindowMaximum239 {
                 window.pop();
             }
             //维护队列，新加入一个元素的时候，移除队列中比自己小的元素
-            Iterator<Integer> iterator = window.iterator();
+            Iterator<Integer> iterator  = window.iterator();
             while (iterator.hasNext()) {
                 Integer next = iterator.next();
                 if (nums[next] < nums[i]) {
