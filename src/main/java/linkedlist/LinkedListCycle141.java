@@ -18,7 +18,7 @@ public class LinkedListCycle141 {
         }
 
         while (head.next != null){
-            if (nodes.contains(head)) {
+            if (nodes.contains (head)) {
                 return true;
             }else{
                 nodes.add(head);
@@ -35,7 +35,6 @@ public class LinkedListCycle141 {
         if (head == null || head.next == null){
             return false;
         }
-
         ListNode quick = head.next;
         ListNode slow = head;
         while (quick != slow){
