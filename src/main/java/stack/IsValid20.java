@@ -19,25 +19,27 @@ public class IsValid20 {
         c2cs.put('{', '}');
         Stack<Character> stack = new Stack();
         for (char c : s.toCharArray()) {
-            if (c2cs.keySet().contains(String.valueOf(c))){
+            if (c2cs.containsKey(c)){
                 stack.push(c);
-            }else{
+            }else {
+                if (stack.isEmpty()){
+                    return false;
+                }
                 Character pop = stack.pop();
-                Character required = c2cs.get(c);
-                if (!required.equals(pop)) {
+                Character required = c2cs.get(pop);
+                if (!required.equals(c)) {
                     return false;
                 }
             }
         }
-        if (stack.isEmpty()){
-            return true;
-        }
-        return false;
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
         boolean res = isValid("()");
         System.out.println(res);
+        boolean res2 = isValid("]");
+        System.out.println(res2);
     }
 
 }
