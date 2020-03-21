@@ -18,6 +18,7 @@ public class CanMeasureWater {
      * 遍历状态，搜索要求的状态值
      * 根据题意，我们只需要考虑四种操作的情况，加减X和加减Y水量；因为任何状态下的操作的效果都可以转化成这四种操作之一达到的效果。
      * 有了以上思路之后，再用BFS搜索想要的状态值就比较容易了
+     * 此方法偏计算机思维
      */
     public boolean canMeasureWater(int x, int y, int z) {
         //考虑边界
@@ -57,6 +58,7 @@ public class CanMeasureWater {
     /**
      * 方法二：数学解法，运用元祖定理也称为裴蜀定理
      * 所求的z一定是x和y的最大公约数的倍数
+     * 此方法偏数学思维
      */
     public boolean canMeasureWater2(int x, int y, int z) {
         //边界判断
