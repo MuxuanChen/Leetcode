@@ -1,4 +1,4 @@
-package bfs;
+package dfs;
 
 /**
  * 999.车的可用捕获量
@@ -10,7 +10,7 @@ package bfs;
  * @email muxuan@maihaoche.com
  * @since 2020-03-26
  */
-public class NumRookCaptures {
+public class NumRookCaptures999 {
     public int numRookCaptures(char[][] board) {
         int pawnCount = 0;
         for (int i = 0; i < board.length; i++) {
@@ -66,7 +66,7 @@ public class NumRookCaptures {
         }
         };
 
-        int res = new NumRookCaptures().numRookCaptures(a);
+        int res = new NumRookCaptures999().numRookCaptures(a);
         System.out.println(res);
     }
 }

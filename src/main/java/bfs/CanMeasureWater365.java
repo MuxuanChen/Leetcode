@@ -12,7 +12,7 @@ import java.util.Set;
  * @email muxuan@maihaoche.com
  * @since 2020-03-21
  */
-public class CanMeasureWater {
+public class CanMeasureWater365 {
     /**
      * 方法一：BFS
      * 遍历状态，搜索要求的状态值

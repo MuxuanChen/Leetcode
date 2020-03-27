@@ -1,11 +1,13 @@
 package math;
 
 /**
+ * 836. 矩形重叠
+ *
  * @author Muxuan
  * @email muxuan@maihaoche.com
  * @since 2020-03-18
  */
-public class IsRectangleOverlap {
+public class IsRectangleOverlap836 {
     /**
      * 方法一：投影法
      *
