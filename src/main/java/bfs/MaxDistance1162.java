@@ -32,7 +32,9 @@ public class MaxDistance1162 {
 
         int count = -1;
         while (!queue.isEmpty()) {
+            //没向外搜索一层，计数+1
             count++;
+            //每次处理同一层中的所有节点，向四周搜索一次
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 int[] cur = queue.poll();
