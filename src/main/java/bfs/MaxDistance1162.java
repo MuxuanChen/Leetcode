@@ -64,4 +64,5 @@ public class MaxDistance1162 {
         }
         return count;
     }
+
 }
