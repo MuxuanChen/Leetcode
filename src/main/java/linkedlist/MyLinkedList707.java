@@ -27,6 +27,7 @@ public class MyLinkedList707 {
             return -1;
         }
         ListNode target = head;
+        //定位到index节点
         for (int i = 0; i <= index; i++) {
             target = target.next;
         }
@@ -51,14 +52,14 @@ public class MyLinkedList707 {
         }
 
         ListNode target = head;
-        //找到要插入节点的前驱节点
+        //定位到index前驱节点
         for (int i = 0; i < index; i++) {
             target = target.next;
         }
-        ListNode node = new ListNode(val);
         /**
          * 先构建新节点，再挂掉前驱节点上
          */
+        ListNode node = new ListNode(val);
         node.next = target.next;
         target.next = node;
         size++;
@@ -69,6 +70,7 @@ public class MyLinkedList707 {
             return;
         }
         ListNode target = head;
+        //定位到index前驱节点
         for (int i = 0; i < index; i++) {
             target = target.next;
         }

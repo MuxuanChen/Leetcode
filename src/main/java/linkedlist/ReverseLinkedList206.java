@@ -28,6 +28,48 @@ public class ReverseLinkedList206 {
         return pre;
     }
 
+    public ListNode reverseList2(ListNode head) {
+        ListNode temp = null;
+        ListNode cur = head;
+        ListNode pre = null;
+
+        while (cur != null) {
+            temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
+        }
+        return pre;
+    }
+
+    /**
+     * 解法三：递归版本
+     *
+     * @param head
+     * @return
+     */
+    public ListNode reverseList3(ListNode head) {
+        return reverse(null, head);
+    }
+
+    /**
+     * 递归处理一件事：切换链表指针方向
+     * 条件：两个参数，两个节点
+     *
+     * @param pre
+     * @param cur
+     * @return
+     */
+    private ListNode reverse(ListNode pre, ListNode cur) {
+        if (cur == null) {
+            return pre;
+        }
+        ListNode temp = cur.next;
+        cur.next = pre;
+        return reverse(cur, temp);
+    }
+
+
     public class ListNode {
         int val;
         ListNode next;
