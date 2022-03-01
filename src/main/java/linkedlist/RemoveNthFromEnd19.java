@@ -29,12 +29,44 @@ public class RemoveNthFromEnd19 {
         return guard.next;
     }
 
+    public ListNode removeNthFromEnd2(ListNode head, int n) {
+        ListNode dummyCode = new ListNode(0, head);
+        ListNode prev = dummyCode;
+        ListNode cur = dummyCode;
+        /**
+         * 先走两步
+         */
+        for (int i = 0; i < n + 1; i++) {
+            prev = prev.next;
+        }
+
+        /**
+         * 等prev走到尾巴处空的时候，cur走到要删除节点的前驱节点
+         */
+        while (prev != null) {
+            prev = prev.next;
+            cur = cur.next;
+        }
+
+        /**
+         * 将要删除节点的前驱节点的next指针指向要删除节点的后驱节点，就实现了删除节点的目的
+         */
+        cur.next = cur.next.next;
+        return dummyCode.next;
+    }
+
+
     private class ListNode {
         int val;
         ListNode next;
 
         ListNode(int x) {
             val = x;
+        }
+
+        ListNode(int x, ListNode node) {
+            val = x;
+            next = node;
         }
     }
 }
