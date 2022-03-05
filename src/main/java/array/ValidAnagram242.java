@@ -1,4 +1,4 @@
-package map;
+package array;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -91,14 +91,14 @@ public class ValidAnagram242 {
             }
         }
 
-        Map<Character,Integer> tm = new HashMap();
+        Map<Character, Integer> tm = new HashMap();
         for (char c : t.toCharArray()) {
-            if (tm.get(c) == null){
-                tm.put(c,1);
-            }else{
+            if (tm.get(c) == null) {
+                tm.put(c, 1);
+            } else {
                 Integer count = tm.get(c);
                 count++;
-                tm.put(c,count);
+                tm.put(c, count);
             }
         }
 

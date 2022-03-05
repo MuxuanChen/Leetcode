@@ -7,6 +7,8 @@ package array;
  * 3.从左到右循环的条件是startY + (n - offset)
  * 4.偏移量下一圈+2
  * 5.起始点下一圈+1
+ * <p>
+ * 给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。
  *
  * @author Haixiang
  * @since 2022-02-15
