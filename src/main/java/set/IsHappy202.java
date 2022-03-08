@@ -32,6 +32,9 @@ public class IsHappy202 {
 
     private int getNextNumber(int n) {
         int res = 0;
+        /**
+         * 从右往左取数字的每一位，每次循环取各位，先模10再除以10
+         */
         while (n > 0) {
             int temp = n % 10;
             res += temp * temp;
