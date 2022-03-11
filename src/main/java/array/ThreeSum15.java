@@ -1,4 +1,4 @@
-package map;
+package array;
 
 
 import java.util.*;
@@ -15,6 +15,7 @@ class ThreeSum15 {
      * 双循环，第三个数放Set
      */
     public static List<List<Integer>> threeSum(int[] nums) {
+        //先排序
         Arrays.sort(nums);
         Set<List<Integer>> result = new HashSet<>();
         for (int i = 0; i < nums.length - 1; i++) {
@@ -28,11 +29,7 @@ class ThreeSum15 {
                     int required = -(nums[i] + nums[j]);
                     requiredNums.add(required);
                 } else {
-                    List<Integer> group = new ArrayList<>();
-                    group.add(nums[i]);
-                    group.add(nums[j]);
-                    group.add(-(nums[i] + nums[j]));
-                    result.add(group);
+                    result.add(Arrays.asList(nums[i], nums[j], -(nums[i] + nums[j])));
                 }
             }
         }
@@ -41,6 +38,7 @@ class ThreeSum15 {
     }
 
     /**
+     * 双指针法
      * 遍历数组获取第一个数
      * 在第一个数之后的数中，从头尾向中间夹寻找要求的两个数
      */
@@ -78,6 +76,53 @@ class ThreeSum15 {
             }
         }
         return res;
+    }
+
+    public static List<List<Integer>> threeSum3(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+
+        //排序
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > 0) {
+                return result;
+            }
+            //去重
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+
+            int left = i + 1;
+            int right = nums.length - 1;
+
+            /**
+             * 操作左右指针
+             */
+            while (left < right) {
+                if (nums[left] + nums[right] == -nums[i]) {
+                    result.add(Arrays.asList(nums[left], nums[right], nums[i]));
+
+                    //找下一个数,向数组中间逼近
+                    left++;
+                    right--;
+
+                    //去重
+                    while (left < right && nums[left] == nums[left - 1]) {
+                        left++;
+                    }
+                    while (left < right && nums[right] == nums[right + 1]) {
+                        right--;
+                    }
+                } else if (nums[left] + nums[right] < -nums[i]) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+
+        return result;
+
     }
 
     public static void main(String[] args) {
