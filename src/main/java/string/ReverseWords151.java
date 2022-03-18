@@ -19,7 +19,9 @@ public class ReverseWords151 {
     public String reverseWords(String s) {
         //去掉头尾空格
         s = s.trim();
+        //拆分单词
         List<String> list = Arrays.asList(s.split("\\s+"));
+        //翻转
         Collections.reverse(list);
         return String.join(" ", list);
     }
@@ -39,5 +41,16 @@ public class ReverseWords151 {
             }
         }
         return sb.toString();
+    }
+
+
+    /**
+     * 方法三 原地翻转，先翻转整个字符串，再翻转每个单词
+     *
+     * @param s
+     * @return
+     */
+    public String reverseWords3(String s) {
+        return null;
     }
 }
