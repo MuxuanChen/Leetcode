@@ -1,4 +1,4 @@
-package list;
+package linkedlist;
 
 /**
  * 链表题目
