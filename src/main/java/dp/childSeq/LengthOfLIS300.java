@@ -27,7 +27,8 @@ public class LengthOfLIS300 {
         for (int i = 1; i < length; i++) {
             for (int j = 0; j < i; j++) {
                 if (nums[i] > nums[j]) {
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                    // dp[i] = Math.max(dp[i], dp[j] + 1);
+                    dp[i] = dp[j] + 1;
                 }
             }
             result = Math.max(result, dp[i]);
